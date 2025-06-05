@@ -1,16 +1,18 @@
-
-
 #!/usr/bin/env python3
+"""
+User Module
+"""
 
-"""user model"""
-
-from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
 
+
 class User(Base):
-    """User class"""
+    """
+    User class
+    """
 
     __tablename__ = 'users'
 
@@ -20,7 +22,8 @@ class User(Base):
     session_id = Column(String(250), nullable=True)
     reset_token = Column(String(250), nullable=True)
 
-
     def __repr__(self):
-        """Return a string representation of the User object."""
+        """
+        String Rep
+        """
         return f"User: id={self.id}"
